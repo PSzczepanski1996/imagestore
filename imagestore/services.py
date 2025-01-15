@@ -29,14 +29,14 @@ def fetch_from_local_path(path: Path) -> List[str]:
 
         for filename in filenames:
             filename_noext = os.path.splitext(filename)[0]
+            is_cover = False
             if 'cover' in filename or ''.join(set(filename_noext)) == '0':
                 is_cover = True
-            else:
-                is_cover = False
             filepath = os.path.join(dirpath, filename)
             if valid_filepath(filepath):
                 collected.append(
-                    [filepath, filename, filename_noext, is_cover])
+                    [filepath, filename, filename_noext, is_cover],
+                )
 
         if not collected:
             continue
@@ -62,7 +62,9 @@ def fetch_from_local_path(path: Path) -> List[str]:
             album_name = order_pattern.sub('', album_name)
 
         album, created = Album.objects.update_or_create(
-            name=album_name, defaults={'order': album_order})
+            name=album_name,
+            defaults={'order': album_order},
+        )
 
         for filepath, filename, filename_noext, is_cover in collected:
             with open(filepath, mode='rb') as original:

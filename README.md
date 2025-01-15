@@ -1,5 +1,8 @@
-ImageStore
+Shiny-ImageStore
 ==========
+
+Fork of this library:
+https://github.com/hovel/imagestore.git
 
 An image gallery, created for easy integration for an exiting django project.
 
@@ -25,4 +28,3 @@ Gallery for your site users
     * make albums non-public
     * set name, descripion and tags for photos
     * edit infomation about photo or upload new veresion
-

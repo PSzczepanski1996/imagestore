@@ -1,12 +1,12 @@
 import os
 from setuptools import setup, find_packages
 
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()
 
 setup(
-    name='imagestore',
-    version='3.3.0',
+    name='shiny-imagestore',
+    version='3.2.0',
     packages=find_packages(),
     install_requires=[
         'django>=2.2',
@@ -21,8 +21,9 @@ setup(
     author_email='gelios@gmail.com',
     description='Gallery solution for django projects',
     long_description=README,
+    long_description_content_type='text/markdown',
     license='BSD 3-Clause',
     keywords='django gallery',
-    url='https://github.com/hovel/imagestore',
+    url='https://github.com/PSzczepanski1996/shiny-imagestore',
     include_package_data=True
 )

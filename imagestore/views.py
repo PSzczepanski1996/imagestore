@@ -172,8 +172,7 @@ class CreateAlbum(CreateView):
 def filter_album_queryset(self):
     if self.request.user.has_perm('imagestore.moderate_albums'):
         return Album.objects.all()
-    else:
-        return Album.objects.filter(user=self.request.user)
+    return Album.objects.filter(user=self.request.user)
 
 
 class UpdateAlbum(UpdateView):

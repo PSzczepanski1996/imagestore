@@ -3,4 +3,4 @@ recursive-include imagestore/templates *
 recursive-include imagestore/migrations *.py
 recursive-include imagestore/locale *
 include imagestore/test_img.jpg
-include README.rst
+include README.md
